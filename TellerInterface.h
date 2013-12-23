@@ -22,6 +22,7 @@ public:
 	void ReturnAccountDeatils(void);
 	void AddClientToAccount(void);
 	void CloseAccount(Account* account);// OK
+	vector<int> GetAccountsIdsByClient(string clientId); // OK
 private:
 	BankDB* bankDB;
 

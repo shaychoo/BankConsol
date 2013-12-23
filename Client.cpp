@@ -1,7 +1,10 @@
 #include "Client.h"
 
-Client::Client(string id, string Name, string birthDate, string PhoneNumber,string Address):Id(id),BirthDate(birthDate)
-{}
+Client::Client(string id, string Name, string birthDate, string phoneNumber,string address)
+:Id(id),FullName(Name),BirthDate(birthDate),PhoneNumber(phoneNumber),Address(address)
+{
+	
+}
 
 string Client::getId()				{ return Id;}
 string Client::getName()			{ return FullName;}

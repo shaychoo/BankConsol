@@ -3,8 +3,10 @@
 #include "Clients.h"
 #include "ATMAction.h"
 #include <map>
-#include <iostream>
+#include <vector>
 #include <string>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 class BankDB
@@ -16,10 +18,11 @@ private:
 	map<int, Account*> Accounts;
 	map<string, Client*> Clients;
 
-	map<int,Client**> AccountToClients;
-	map<int,Account**> ClientToAccounts;
-	map<int,ATMAction*> ATMLog;
+	map<Account*, vector<Client*>> AccountToClients;
+	map<Client*, vector<Account*>> ClientToAccounts;
 
+	map<int,ATMAction*> ATMLog;
+	void Initialize();
 
 public:
     static BankDB* getDB();
@@ -31,6 +34,9 @@ public:
 
 	Account* getAccount(int id);
 	Client*  getClient(string id);
+
+	vector<Client*> getClients(Account* account);
+	vector<Account*> getAccounts(Client* client);
 		
 };
 enum AccountTypes

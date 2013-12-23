@@ -5,6 +5,8 @@
 #define ACCOUNT_HAVE_NO_MONEY "There is no enought money in this account"
 #define BALANCE_IS_NOT_ZERO "The balance is not zero"
 
+//Client
+#define CLIENT_NOT_EXIST "Client not exist"
 
 // ATM 
 #define INVALID_AMOUNT "This Amount is Invalid to withdrow"

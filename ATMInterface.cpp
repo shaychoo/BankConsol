@@ -5,7 +5,7 @@ ATMInterface::ATMInterface(void)
 {
 	RefillATM();
 	BankDB* db = BankDB::getDB();
-	map<int,ATMAction*> ATMLog = db->ATMLog;
+	//map<int,ATMAction*> ATMLog = db->ATMLog;
 
 }
 

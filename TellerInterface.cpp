@@ -58,3 +58,17 @@ void CloseAccount(Account* account)
 
 	account->CloseAccount();
 }
+
+vector<int> TellerInterface::GetAccountsIdsByClient(string clientId)
+{
+	BankDB* db = BankDB::getDB();
+	Client* currentClient = db->getClient(clientId);
+	vector<Account*> accounts = db->getAccounts(currentClient);
+	vector<int> result;
+	for (std::vector<Account*>::iterator account = accounts.begin(); account != accounts.end(); ++account)
+	{  
+		int temp =(*account)->getAccountId();
+		result.push_back(temp);
+	}
+	return result;
+}
