@@ -1,7 +1,6 @@
 #pragma once
 #include <map>
 #include <iostream>
-
 #include "Accounts.h"			// Load all account types
 #include "Clients.h"			// Load all client types
 #include "BankInterface.h"		// Abstract type interface
@@ -30,10 +29,10 @@ public:
 
 
 ///////// GUI Functions
+
 	string convertToString(System::String^ managedString);
 	string GetAccountName(int id);
-	string GetAccountBalance(int id);
-	string GetBallance(int accountId = 0);
+	double GetAccountBallance(int accountId = 0);
 	void TransferMoney(int amount,int transferToAccount,int transferFromAccountId = 0);
 	void Deposit(int amount,string cashOrCheck,int accountId = 0 );
 	void Withdrow(int amount,int accountId = 0);
@@ -44,8 +43,6 @@ public:
 	void SetBankInterfaceType(enum BankInterfaceType nextBankInterfaceType);
 	enum BankInterfaceType GetBankInterfaceType();
 
-
-
 private:
 	Account* CurrentWorkingAccount;
 	Client*  CurrentWorkingClient;
@@ -54,8 +51,6 @@ private:
 	TellerInterface* Teller;
 	ManagerInterface* Manager;
 	enum BankInterfaceType bankInterfaceType;
-
-
 };
 
 enum BankInterfaceType
